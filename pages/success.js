@@ -21,9 +21,9 @@ export async function getServerSideProps(params) {
   );
   return { props: { order } };
 }
-const route = useRouter();
 
 function success({ order }) {
+  const route = useRouter();
   return (
     <Wrapper>
       <Card
