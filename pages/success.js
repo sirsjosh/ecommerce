@@ -23,7 +23,7 @@ export async function getServerSideProps(params) {
   return { props: { order } };
 }
 
-function success() {
+function success({ order }) {
   const route = useRouter();
   return (
     <Wrapper>
