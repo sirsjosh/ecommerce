@@ -2,7 +2,7 @@ import React from "react";
 import { ProductStyle, Card } from "../styles/ProductStyle";
 import Link from "next/link";
 
-function products({ product }) {
+function Products({ product }) {
   const { title, price, image, slug } = product.attributes;
 
   return (
