@@ -1,3 +1,4 @@
+import React from "react";
 import { useRouter } from "next/router";
 
 import {
@@ -22,7 +23,7 @@ export async function getServerSideProps(params) {
   return { props: { order } };
 }
 
-function success({ order }) {
+function success() {
   const route = useRouter();
   return (
     <Wrapper>
