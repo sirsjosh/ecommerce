@@ -12,7 +12,9 @@ export default function Home() {
 
   if (fetching) return <p>Loading...</p>;
   if (error) return <p>error...</p>;
+
   const products = data.products.data;
+  console.log(products);
 
   return (
     <div>
