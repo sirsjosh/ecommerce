@@ -24,9 +24,9 @@ export default function Home() {
 
       <main>
         <Gallery>
-          {products?.map((product) => (
+          {/* {products?.map((product) => (
             <Product product={product} key={product.attributes.slug} />
-          ))}
+          ))} */}
         </Gallery>
       </main>
     </div>
