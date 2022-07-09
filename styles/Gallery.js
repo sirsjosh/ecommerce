@@ -1,7 +1,11 @@
 import styled from "styled-components";
 
 export const Gallery = styled.div`
-  display: grid;
+  /* display: grid;
   grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
-  grid-gap: 1rem;
+  grid-gap: 1rem; */
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 `;

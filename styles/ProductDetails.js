@@ -6,6 +6,14 @@ export const ProductDetail = styled.div`
   margin-top: 5rem;
   img {
     width: 30%;
+
+    @media (max-width: 633px) {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 633px) {
+    flex-direction: column;
   }
 `;
 
@@ -17,6 +25,13 @@ export const ProductInfo = styled.div`
     font-weight: medium;
     padding: 0.5rem 1rem;
     cursor: pointer;
+    @media (max-width: 633px) {
+      margin: 1rem 0;
+    }
+  }
+
+  @media (max-width: 633px) {
+    width: 100%;
   }
 `;
 

@@ -9,6 +9,10 @@ export const Navstyles = styled.nav`
 
   a {
     font-size: 1.2rem;
+
+    @media (max-width: 633px) {
+      font-size: 1rem;
+    }
   }
 `;
 
@@ -19,6 +23,11 @@ export const Logo = styled.div`
     cursor: pointer;
     width: 5rem;
     height: 5rem;
+
+    @media (max-width: 633px) {
+      width: 3rem;
+      height: 3rem;
+    }
   }
 `;
 

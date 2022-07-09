@@ -9,8 +9,13 @@ import {
   CardRight,
   Checkout,
   Cards,
+  Close,
 } from "../styles/CartStyles";
-import { AiFillPlusCircle, AiFillMinusCircle } from "react-icons/ai";
+import {
+  AiFillPlusCircle,
+  AiFillMinusCircle,
+  AiOutlineClose,
+} from "react-icons/ai";
 import { Quantity } from "../styles/ProductDetails";
 import { FaShoppingCart } from "react-icons/fa";
 import getStripe from "../lib/getStripe";
@@ -57,8 +62,12 @@ function Cart() {
       exit={{ opacity: 0 }}
       onClick={() => setShowCart(false)}
     >
+      <Close onClick={() => setShowCart(false)}>
+        <AiOutlineClose />
+      </Close>
+
       <CartSyle
-        initial={{ x: "50%" }}
+        initial={{ x: window.innerWidth > 633 ? "50%" : "100%" }}
         animate={{ x: "0%" }}
         exit={{ x: "50%" }}
         transition={{ type: "tween" }}

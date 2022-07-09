@@ -20,6 +20,11 @@ export const CartSyle = styled(motion.div)`
   padding: 2rem 5rem;
   overflow-y: scroll;
   position: relative;
+
+  @media (max-width: 633px) {
+    width: 100%;
+    padding: 2rem 2rem;
+  }
 `;
 
 export const Card = styled(motion.div)`
@@ -89,3 +94,15 @@ export const Checkout = styled(motion.div)`
 `;
 
 export const Cards = styled(motion.div)``;
+
+export const Close = styled(motion.div)`
+  position: absolute;
+  z-index: 200;
+  top: 0;
+  right: 0;
+  padding: 0.5rem;
+
+  svg {
+    font-size: 2rem;
+  }
+`;
