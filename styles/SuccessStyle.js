@@ -26,6 +26,9 @@ export const Card = styled(motion.div)`
 
 export const Wrapper = styled(motion.div)`
   margin: 5rem 15rem;
+  @media (max-width: 633px) {
+    margin: 2rem 2rem;
+  }
 `;
 
 export const Address = styled.div`
