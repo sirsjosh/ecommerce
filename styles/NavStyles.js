@@ -11,7 +11,7 @@ export const Navstyles = styled.nav`
     font-size: 1.2rem;
 
     @media (max-width: 633px) {
-      font-size: 1rem;
+      font-size: 0.8rem;
     }
   }
 `;
@@ -25,8 +25,8 @@ export const Logo = styled.div`
     height: 5rem;
 
     @media (max-width: 633px) {
-      width: 3rem;
-      height: 3rem;
+      width: 2rem;
+      height: 2rem;
     }
   }
 `;
