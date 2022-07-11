@@ -107,3 +107,10 @@ export const Close = styled(motion.div)`
     font-size: 2rem;
   }
 `;
+
+export const Error = styled.p`
+  color: red;
+  text-align: center;
+  font-weight: 500;
+  margin: 1rem 0;
+`;

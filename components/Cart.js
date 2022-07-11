@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import { useUser } from "@auth0/nextjs-auth0";
 import { useStateContext } from "../lib/context";
 import {
   CartWrapper,
@@ -10,6 +11,7 @@ import {
   Checkout,
   Cards,
   Close,
+  Error,
 } from "../styles/CartStyles";
 import {
   AiFillPlusCircle,
@@ -40,19 +42,32 @@ const itemCard = {
 };
 
 function Cart() {
+  //handle error
+  const [showError, setShowError] = useState(false);
+  const { user, error, isLoading } = useUser();
+  const [buttonText, setButtonText] = useState("Purchase");
+
   const { qty, cartItems, setShowCart, onAdd, onRemove, totalPrice } =
     useStateContext();
 
   //payment
   const handleCheckout = async () => {
-    const stripe = await getStripe();
-    const res = await fetch("/api/stripe", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(cartItems),
-    });
-    const data = await res.json();
-    await stripe.redirectToCheckout({ sessionId: data.id });
+    if (user) {
+      setButtonText("Loading...");
+      const stripe = await getStripe();
+      const res = await fetch("/api/stripe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(cartItems),
+      });
+      const data = await res.json();
+      await stripe.redirectToCheckout({ sessionId: data.id });
+    } else {
+      setShowError(true);
+    }
+    setTimeout(function () {
+      setShowError(false);
+    }, 2000);
   };
 
   return (
@@ -112,7 +127,8 @@ function Cart() {
         {cartItems.length >= 1 && (
           <Checkout layout>
             <h3>Subtotal:{totalPrice}元</h3>
-            <button onClick={handleCheckout}>Purchase</button>
+            <button onClick={handleCheckout}>{buttonText}</button>
+            {showError ? <Error layout>Please Sign In</Error> : null}
           </Checkout>
         )}
       </CartSyle>
