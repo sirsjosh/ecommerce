@@ -48,6 +48,10 @@ export const NavItems = styled.div`
   h3 {
     font-size: 1rem;
     padding: 0.25rem;
+
+    @media (max-width: 633px) {
+      font-size: 0.5rem;
+    }
   }
   svg {
     font-size: 1.5rem;
